@@ -17,6 +17,16 @@
   }
 }
 
+.toTop {
+  flex-direction: row-reverse;
+  display: flex;
+
+  img {
+    width: 50px;
+    margin: 0 20px;
+  }
+}
+
 .moreButton {
   display: flex;
   justify-content: center;

@@ -18,6 +18,10 @@ export class PokedexListComponent implements OnInit {
     this.loadPokemon();
   }
 
+  toTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }
+
   loadPokemon(loadMore = false) {
     if (loadMore) {
       this.offset += 20;
