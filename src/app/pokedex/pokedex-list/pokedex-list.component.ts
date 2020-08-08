@@ -9,9 +9,7 @@ import { Pokemon, Pokemons } from '../../shared/pokemon.model';
   styleUrls: ['./pokedex-list.component.scss'],
 })
 export class PokedexListComponent implements OnInit {
-  offset = 10;
-  pokemonList: Pokemons[];
-  pokemons: Pokemon;
+  offset = 18;
   pokemon = [];
 
   constructor(private pokedexService: PokedexService) {}
@@ -20,7 +18,10 @@ export class PokedexListComponent implements OnInit {
     this.loadPokemon();
   }
 
-  loadPokemon() {
+  loadPokemon(loadMore = false) {
+    if (loadMore) {
+      this.offset += 20;
+    }
     this.pokedexService.getPokemon(this.offset).subscribe((res) => {
       console.log('result:', res);
       this.pokemon = res;

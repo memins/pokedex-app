@@ -15,9 +15,9 @@ export class PokedexService {
 
   constructor(private http: HttpClient) {}
 
-  getPokemon(offset = 0) {
+  getPokemon(limit = 0, offset = 0) {
     return this.http
-      .get(`${this.baseURL}/pokemon?limit=25&offset=${offset}`)
+      .get(`${this.baseURL}/pokemon?limit=${limit}&offset=${offset}`)
       .pipe(
         map((result) => {
           return result['results'];
