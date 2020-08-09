@@ -22,6 +22,20 @@ export class PokedexListComponent implements OnInit {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }
 
+  onSearchChange(event) {
+    let value = event.target.value;
+
+    if (value == '') {
+      this.offset = 0;
+      this.loadPokemon();
+      return;
+    }
+
+    this.pokedexService.findPokemon(value).subscribe((res) => {
+      this.pokemon = [res];
+    });
+  }
+
   loadPokemon(loadMore = false) {
     if (loadMore) {
       this.offset += 20;

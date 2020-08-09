@@ -1,3 +1,22 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1>Search Pokémon</h1>
+
+    <div class="form-group has-search">
+      <span class="fa fa-search fa-lg form-control-feedback"></span>
+      <input
+        type="text"
+        class="form-control search"
+        placeholder="Search for Pokémon"
+        (change)="onSearchChange($event)"
+      />
+    </div>
+    <p>
+      Need a hint? Try
+      <span style="font-weight: bold;">"pikachu", "ditto", "pidgeot"</span>
+    </p>
+  </div>
+</section>
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row">

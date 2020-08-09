@@ -33,8 +33,52 @@
   margin-top: 25px;
 }
 
+.jumbotron {
+  padding-top: 2rem;
+
+  margin-bottom: 0;
+  background-color: #fff;
+
+  .container {
+    max-width: 40rem;
+
+    h1 {
+      font-weight: 300;
+    }
+
+    .search {
+      height: 60px;
+    }
+  }
+}
+
+.has-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-control {
+    padding-left: 2.375rem;
+  }
+
+  .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+  }
+}
+
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
+  }
+  .jumbotron {
+    padding-top: 5rem;
   }
 }
