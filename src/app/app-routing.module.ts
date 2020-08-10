@@ -9,12 +9,13 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sources', component: SourcesComponent },
+
   {
     path: 'pokedex',
     component: PokedexComponent,
     children: [
       { path: '', component: PokedexListComponent },
-      { path: 'detail', component: PokedexDetailComponent },
+      { path: ':index', component: PokedexDetailComponent },
     ],
   },
 ];

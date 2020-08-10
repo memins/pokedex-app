@@ -1,1 +1,95 @@
-<p>pokedex-detail works!</p>
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row" *ngIf="details">
+    <div class="col-md-3 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <div *ngFor="let item of details">
+          <img
+            [src]="details.images[2]"
+            class="rounded-circle mt-5"
+            width="90"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="p-3 py-5">
+        <div class="titleC" *ngFor="let item of details">
+          <h1>
+            {{ item.name }}
+          </h1>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <label class="labels">Order-Number</label>
+            <div>
+              OrderNr.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="labels">Surname</label
+            ><input
+              type="text"
+              class="form-control"
+              value="Doe"
+              placeholder="Doe"
+            />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <label class="labels">Headline</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="headline"
+              value="UI/UX Developer"
+            />
+          </div>
+          <div class="col-md-12">
+            <label class="labels">Current position</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="headline"
+              value="UI/UX Developer at Boston"
+            />
+          </div>
+          <div class="col-md-12">
+            <label class="labels">Education</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="education"
+              value="Boston University"
+            />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <label class="labels">Country</label
+            ><input
+              type="text"
+              class="form-control"
+              placeholder="country"
+              value="USA"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="labels">State/Region</label
+            ><input
+              type="text"
+              class="form-control"
+              value="Boston"
+              placeholder="state"
+            />
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <button class="btn btn-primary profile-button" type="button">
+            Save Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

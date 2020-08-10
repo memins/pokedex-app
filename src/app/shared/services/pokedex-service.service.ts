@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Pokemon } from '../pokemon.model';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root',
@@ -39,6 +41,18 @@ export class PokedexService {
         pokemon['image'] = this.getPokeImage(pokemon['id']);
         pokemon['pokeIndex'] = pokemon['id'];
         return pokemon;
+      })
+    );
+  }
+
+  getPokemonDetail(index) {
+    return this.http.get(`${this.baseURL}/pokemon/${index}`).pipe(
+      map((poke) => {
+        let sprites = Object.keys(poke['sprites']);
+        poke['images'] = sprites
+          .map((spriteKey) => poke['sprites'][spriteKey])
+          .filter((img) => img);
+        return poke;
       })
     );
   }
