@@ -10,6 +10,7 @@ import { PokedexService } from 'src/app/shared/services/pokedex-service.service'
 })
 export class PokedexDetailComponent implements OnInit {
   details: any;
+  evolutions: any;
   // pokemons: Pokemon[];
 
   constructor(
@@ -24,9 +25,8 @@ export class PokedexDetailComponent implements OnInit {
       this.details = details;
       // this.pokemons = details;
     });
-  }
-
-  returnZero() {
-    return 0;
+    this.pokedexService.getPokemonEvolution(index).subscribe((evolutions) => {
+      this.evolutions = evolutions;
+    });
   }
 }

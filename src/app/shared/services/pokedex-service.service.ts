@@ -56,4 +56,8 @@ export class PokedexService {
       })
     );
   }
+
+  getPokemonEvolution(index) {
+    return this.http.get(`${this.baseURL}/evolution-chain/${index}`);
+  }
 }
